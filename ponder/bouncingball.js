@@ -7,14 +7,14 @@ ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
 let x = 50;
 let y = 50;
 const radius = 10;
-let dx = 1.5; 
-let dy = 1.5;
+let dx = 1; 
+let dy = 1;
 const color = "orange";
 
 function drawLogo() {
     const img = new Image();
-    img.src = "dvdlogo.png";
-    ctx.drawImage(img, x, y);
+    img.src = "ponder/dvdlogo.png";
+    ctx.drawImage(img, x, y, 100, 50);
     
 }
 
@@ -29,11 +29,11 @@ function update() {
     x += dx;
     y += dy;
 
-    if (x + 300 > myCanvas.width || x < 0) {
+    if (x + 90 > myCanvas.width || x < 0) {
         dx = -dx;
     }
 
-    if (y + 150 > myCanvas.height || y < 0) {
+    if (y + 50 > myCanvas.height || y < 0) {
         dy = -dy;
     }
 
