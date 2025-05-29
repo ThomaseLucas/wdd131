@@ -59,15 +59,36 @@ main {
     padding-right: 40px;
     margin-right: 40px;
     border-right: 2px solid var(--gold);
+    text-decoration: none;
+    list-style: none;
+    line-height: .5em;
+    text-align: right;
 }
 
-#article{
+#review h3 {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#article_details{
     grid-column: 2; 
-    
-    
 }
 
-#article h2{
+#img-container{
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    }
+
+#img-container img{
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+#article_details h2{
     font-family: var(--body-font);
     color: var(--red);
 }
@@ -78,10 +99,19 @@ main {
     max-width: 250px;
     justify-content: center;
     text-align: center;
+    max-height: 300px;
 }
 
-#article-deets {
+#filter-form{
+    justify-content: start;
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.article {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
+    margin-bottom: 15px;
 }
+
