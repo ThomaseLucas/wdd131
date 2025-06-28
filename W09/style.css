@@ -30,7 +30,7 @@ header {
   gap: 0.5rem;
   justify-content: center;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
+  
 }
 
 header img {
@@ -50,6 +50,7 @@ form {
   border: 1px solid #ccc;
   border-radius: 6px;
   overflow: hidden;
+  
 }
 
 form input {
@@ -96,6 +97,13 @@ form button img {
   /* align-items: center;
   text-align: center; */
 }
+
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin-bottom: .5rem;
+}
+
 
 .recipe-card img {
   max-width: 100%;

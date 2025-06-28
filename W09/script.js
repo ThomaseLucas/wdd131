@@ -279,3 +279,125 @@ const recipes = [
 		rating: 4
 	}
 ]
+
+function getRating(rating) {
+
+    // begin building an html string using the ratings HTML written earlier as a model.
+
+    let html = `<span
+
+      class="rating"
+
+      role="img"
+
+      aria-label="Rating: ${rating} out of 5"
+
+    >Rating: `
+
+    for (let i = 1; i <= 5; i++) {
+
+      if (i <= rating) {
+
+        html += `<span aria-hidden="true" class="good-star">⭐</span>`
+
+      } else {
+
+        html += `<span aria-hidden="true" class="empty-star">☆</span>`
+
+      }    
+
+    }
+
+    html += `</span>`
+
+    return html;
+
+}
+
+function getRandomNumber(recipes){
+	let random = Math.random();
+	return Math.floor(random * recipes.length);
+}
+
+function getRandomRecipe(recipes){
+	let random_index = getRandomNumber(recipes);
+	return recipes[random_index];
+}
+
+function getTags(tags){
+	let html = `
+	<div class="tags">
+	`
+	
+	tags.forEach(tag => {
+		html += `<span class="tag">${tag}</span>`	
+	});
+
+	html += '</div>'
+
+	return html;
+}
+
+function generateHTMLforRecipe(recipe){
+	return `
+	<article class="recipe-card">
+		<div class="recipe-content">
+		<img src=${recipe.image} alt=${recipe.description} />
+		<div class="recipe-details">
+			${getTags(recipe.tags)}
+		<h2>${recipe.name}</h2>
+		<div id="rating-container">
+			${getRating(recipe.rating)}
+		</div>
+		<p class="description">
+			${recipe.description}
+		</p>	
+		</div>
+	</div>
+  </article>`
+  
+}
+
+function init(recipes){
+	let card_container = document.querySelector("#all-recipes")
+
+	let recipe = getRandomRecipe(recipes)
+
+	let html = generateHTMLforRecipe(recipe)
+
+	card_container.innerHTML += html
+}
+
+function renderRecipes(recipeList){
+	const container = document.querySelector('#all-recipes');
+	container.innerHTML = '';
+
+	recipeList.forEach(recipe => {
+		container.innerHTML += generateHTMLforRecipe(recipe);
+	});
+}
+
+function filterRecipes(query){
+	return recipes.filter(recipe =>{
+		const nameMatch = recipe.name.toLowerCase().includes(query);
+		const descMatch = recipe.description.toLowerCase().includes(query);
+		
+		const tagsMatch = recipe.tags.find(tag=> tag.toLowerCase().includes(query));
+
+		const ingredientsMatch = recipe.recipeIngredient.find(ing => ing.toLowerCase().includes(query));
+		return nameMatch || descMatch || tagsMatch || ingredientsMatch;
+	}).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function searchHandler(event){
+	event.preventDefault();
+	const query = document.getElementById('search').value.toLowerCase();
+	const filtered = filterRecipes(query);
+	renderRecipes(filtered)
+}
+
+document.getElementById('search-button').addEventListener('click', searchHandler);
+
+
+
+init(recipes)
