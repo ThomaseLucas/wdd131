@@ -1,0 +1,141 @@
+/* Contact Form Styling */
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+main h1 {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 2.5rem;
+    color: var(--dark-bg);
+    margin-bottom: 40px;
+}
+
+#contact-form {
+    background-color: var(--cornsilk);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--tea-green);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact-form label {
+    font-family: var(--main-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+    margin-bottom: 5px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--tea-green);
+    border-radius: 8px;
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+    background-color: var(--papaya-whip);
+    color: var(--dark-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--buff);
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+    background-color: var(--beige);
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: var(--secondary-font);
+}
+
+#contact-form button {
+    background-color: var(--tea-green);
+    color: var(--dark-bg);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-family: var(--main-font);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    align-self: center;
+    min-width: 120px;
+}
+
+#contact-form button:hover {
+    background-color: var(--buff);
+    color: var(--cornsilk);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#contact-form button:active {
+    transform: translateY(0);
+}
+
+/* Field Groups */
+.field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px 15px;
+    }
+    
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    #contact-form {
+        padding: 30px 20px;
+    }
+    
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form textarea {
+        padding: 10px 14px;
+    }
+    
+    #contact-form button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px 10px;
+    }
+    
+    main h1 {
+        font-size: 1.8rem;
+    }
+    
+    #contact-form {
+        padding: 20px 15px;
+    }
+    
+    #contact-form button {
+        width: 100%;
+    }
+}

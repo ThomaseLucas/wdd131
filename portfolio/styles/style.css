@@ -1,0 +1,242 @@
+:root {
+    /* Light mode color scheme (default) */
+    --tea-green: #ccd5aeff;
+    --beige: #e9edc9ff;
+    --cornsilk: #fefae0ff;
+    --papaya-whip: #faedcdff;
+    --buff: #d4a373ff;
+
+    /* Text colors for light mode */
+    --dark-bg: #1d1f21;
+    --dark-text: #c5c8c6;
+
+    --main-font: 'Roboto', sans-serif;
+    --secondary-font: 'Open Sans', sans-serif;
+}
+
+/* Dark mode overrides - when html has data-theme="dark" */
+[data-theme="dark"] {
+    /* Dark mode background colors */
+    --tea-green: #2d3142;      /* Darker green for headers */
+    --beige: #1a1a1a;          /* Dark background for containers */
+    --cornsilk: #0f0f0f;       /* Very dark background for main areas */
+    --papaya-whip: #1a1a1a;    /* Dark for form inputs */
+    --buff: #8b6f47;           /* Darker buff for accents */
+
+    /* Inverted text colors for dark mode */
+    --dark-bg: #e0e0e0;        /* Light text on dark backgrounds */
+    --dark-text: #b0b0b0;      /* Slightly dimmed light text */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cornsilk);
+}
+
+header {
+  text-align: center;
+  background-color: var(--tea-green);
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: var(--main-font);
+  padding: 30px;
+}
+
+#profile-pic {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    object-position: center top;
+    box-shadow: #1d1f21 5px 0px 10px;
+}
+
+header nav {
+    flex-grow: 1;
+    list-style-type: none;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 40px;
+}
+
+.active {
+    background-color: var(--buff);
+    color: var(--cornsilk);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--dark-bg);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--buff);
+    color: var(--cornsilk);
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding: 40px 0;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-family: var(--main-font);
+    color: var(--dark-bg);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-family: var(--secondary-font);
+    color: var(--dark-bg);
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-color: var(--buff);
+    border-radius: 8px;
+}
+
+/* Featured Projects Section */
+.featured-projects {
+    border-top: 2px solid var(--tea-green);
+    padding-top: 40px;
+    margin-bottom: 40px;
+}
+
+.featured-projects h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--main-font);
+    color: var(--dark-bg);
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.project-card {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+}
+
+.project-image {
+    margin-bottom: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: var(--buff);
+    border-radius: 8px;
+    object-position: center bottom;
+}
+
+.project-button {
+    background-color: var(--tea-green);
+    color: var(--dark-bg);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-family: var(--main-font);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: var(--buff);
+}
+
+/* Footer */
+footer {
+    background-color: var(--tea-green);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-family: var(--main-font);
+    color: var(--dark-bg);
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-card {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .hero-section {
+        padding: 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .project-button {
+        width: 100%;
+    }
+}

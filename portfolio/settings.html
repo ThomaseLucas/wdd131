@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/settings.css" />
+    <script src="script/theme.js" defer></script>
+    <title>Settings</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img
+          id="profile-pic"
+          src="images/thomas_professional_straight-min.jpg"
+          alt="Photo of me"
+          style="border-radius: 50%"
+        />
+      </a>
+      <nav>
+        <a href="index.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contactme.html">Contact Me</a>
+        <a href="settings.html"
+          ><img
+            style="width: 20px; height: auto"
+            src="images/setting.png"
+            alt="gear icon"
+        /></a>
+      </nav>
+    </header>
+    <main>
+      <div class="settings-container">
+        <div class="setting-item">
+          <div class="setting-info">
+            <h2>Theme</h2>
+            <p>Switch between light and dark mode</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="theme-toggle" class="toggle-input" />
+            <label for="theme-toggle" class="toggle-label">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item disabled">
+          <div class="setting-info">
+            <h2>Notifications</h2>
+            <p>Coming soon...</p>
+          </div>
+          <div class="toggle-switch">
+            <input
+              type="checkbox"
+              id="notifications-toggle"
+              class="toggle-input"
+              disabled
+            />
+            <label for="notifications-toggle" class="toggle-label">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>

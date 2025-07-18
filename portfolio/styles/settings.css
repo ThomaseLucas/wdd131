@@ -1,0 +1,181 @@
+/* Settings Page Styling */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 550px;
+}
+
+main h1 {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 2.5rem;
+    color: var(--dark-bg);
+    margin-bottom: 40px;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setting-item {
+    background-color: var(--cornsilk);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--tea-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.setting-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.setting-item.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.setting-item.disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.setting-info {
+    flex: 1;
+}
+
+.setting-info h2 {
+    font-family: var(--main-font);
+    font-size: 1.5rem;
+    color: var(--dark-bg);
+    margin: 0 0 8px 0;
+}
+
+.setting-info p {
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+    color: var(--dark-bg);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* I coppied this code below for the sliding switch! I didn't make all of it as it was more complicated than I knew how to do with CSS. I hope that's ok */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--tea-green);
+    border-radius: 34px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-slider {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--cornsilk);
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-input:checked + .toggle-label {
+    background-color: var(--buff);
+}
+
+.toggle-input:checked + .toggle-label .toggle-slider {
+    transform: translateX(26px);
+    background-color: var(--dark-bg);
+}
+
+.toggle-input:focus + .toggle-label {
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.3);
+}
+
+.toggle-input:disabled + .toggle-label {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.toggle-input:disabled + .toggle-label .toggle-slider {
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px 15px;
+    }
+    
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .setting-item {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .setting-info {
+        text-align: center;
+    }
+    
+    .setting-info h2 {
+        font-size: 1.3rem;
+    }
+    
+    .toggle-switch {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px 10px;
+    }
+    
+    main h1 {
+        font-size: 1.8rem;
+    }
+    
+    .setting-item {
+        padding: 15px;
+    }
+    
+    .setting-info h2 {
+        font-size: 1.2rem;
+    }
+    
+    .setting-info p {
+        font-size: 0.9rem;
+    }
+}

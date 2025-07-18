@@ -1,0 +1,161 @@
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.recipe-card {
+    background-color: var(--cornsilk);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--tea-green);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--tea-green);
+}
+
+.recipe-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.skill {
+    background-color: var(--buff);
+    color: var(--dark-bg);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: var(--secondary-font);
+}
+
+.recipe-details h2 {
+    font-family: var(--main-font);
+    color: var(--dark-bg);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.description {
+    font-family: var(--secondary-font);
+    color: var(--dark-bg);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.github-link {
+    font-family: var(--secondary-font);
+    color: var(--buff);
+    font-size: 0.9rem;
+    word-break: break-all;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--tea-green);
+}
+
+.github-link:hover {
+    color: var(--dark-bg);
+    cursor: pointer;
+}
+
+
+.filter-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.filter-dropdown {
+    background-color: var(--cornsilk);
+    border: 2px solid var(--tea-green);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-family: var(--main-font);
+    font-size: 1rem;
+    color: var(--dark-bg);
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.filter-dropdown:focus {
+    outline: none;
+    border-color: var(--buff);
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.3);
+}
+
+
+@media (max-width: 768px) {
+    #projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .recipe-card {
+        max-width: 100%;
+    }
+    
+    .recipe-details {
+        padding: 15px;
+    }
+    
+    .recipe-details h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects {
+        gap: 15px;
+    }
+    
+    .recipe-details {
+        padding: 12px;
+    }
+    
+    .recipe-details h2 {
+        font-size: 1.2rem;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+    }
+    
+    .skill {
+        font-size: 0.8rem;
+        padding: 3px 10px;
+    }
+    
+    .filter-dropdown {
+        min-width: 150px;
+        font-size: 0.9rem;
+    }
+}

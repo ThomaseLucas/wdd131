@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thomas Lucas</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="script/theme.js" defer></script>
+    <script src="script/bouncingball.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img
+          id="profile-pic"
+          src="images/thomas_professional_straight-min.jpg"
+          alt="Photo of me"
+          style="border-radius: 50%"
+        />
+      </a>
+      <nav>
+        <a href="index.html" class="active">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contactme.html">Contact Me</a>
+        <a href="settings.html"
+          ><img
+            style="width: 20px; height: auto"
+            src="images/setting.png"
+            alt="gear icon"
+        /></a>
+      </nav>
+    </header>
+    <main>
+      <!-- Hero/Content Section -->
+
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1>Content</h1>
+          <p>
+            Welcome to my portfolio. I'm a web developer passionate about
+            creating beautiful and functional websites.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img
+            src="images/thomas_professional_straight-min.jpg"
+            alt="Portfolio showcase image"
+          />
+        </div>
+      </div>
+
+      <!-- Featured Projects Section -->
+      <div class="featured-projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/Cookout_MVP.png" alt="Project 1" />
+            </div>
+            <button class="project-button">View Project</button>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div id="ball-container">
+                <canvas id="ball_canvas" width="300" height="200"></canvas>
+              </div>
+            </div>
+            <button class="project-button">View Project</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>

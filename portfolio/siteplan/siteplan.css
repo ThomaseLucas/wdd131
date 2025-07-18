@@ -69,3 +69,7 @@ code {
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+
+#ball-container {
+  width: 100%;
+}
