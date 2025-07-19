@@ -13,47 +13,11 @@ const projectExamples = [
         title: "Cookout MVP Discord Bot",
         description: "A Discord bot designed to streamline meal planning and test the viability of a tech solution for collaborative meal organization.",
         technologies: ["Discord.js", "Python", "Supabase"],
-        githubUrl: "https://github.com/ThomaseLucas/cookout-mvp",
+        githubUrl: "https://github.com/ThomaseLucas/Cookout_MVP",
         liveDemoUrl: undefined,
         imageUrl: "images/Cookout_MVP.png",
         completed: false
-    },
-    {
-        title: "Personal Portfolio Website",
-        description: "A responsive website to showcase my projects and skills.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        githubUrl: "https://github.com/username/portfolio",
-        liveDemoUrl: "https://username.github.io/portfolio/",
-        imageUrl: "images/portfolio-screenshot.png",
-        completed: true
-    },
-    {
-        title: "Personal Portfolio Website",
-        description: "A responsive website to showcase my projects and skills.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        githubUrl: "https://github.com/username/portfolio",
-        liveDemoUrl: "https://username.github.io/portfolio/",
-        imageUrl: "images/portfolio-screenshot.png",
-        completed: true
-    },
-    {
-        title: "Personal Portfolio Website",
-        description: "A responsive website to showcase my projects and skills.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        githubUrl: "https://github.com/username/portfolio",
-        liveDemoUrl: "https://username.github.io/portfolio/",
-        imageUrl: "images/portfolio-screenshot.png",
-        completed: true
-    },
-    {
-        title: "Personal Portfolio Website",
-        description: "A responsive website to showcase my projects and skills.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        githubUrl: "https://github.com/username/portfolio",
-        liveDemoUrl: "https://username.github.io/portfolio/",
-        imageUrl: "images/portfolio-screenshot.png",
-        completed: true
-    },
+    }
 ];
 
 // Function to create HTML for the skills/technologies section
@@ -87,9 +51,11 @@ function generateHTMLforProject(project){
 		<p class="description">
 			${project.description}
 		</p>
+        <a id="github-link" href="${project.githubUrl}">
         <p class = "github-link">
         ${project.githubUrl}
         </p>
+        </a>
 		</div>
 	</div>
   </article>`

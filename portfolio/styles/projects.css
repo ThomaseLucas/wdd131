@@ -88,6 +88,10 @@
     cursor: pointer;
 }
 
+#github-link {
+    text-decoration: none;
+}
+
 
 .filter-container {
     margin-bottom: 30px;

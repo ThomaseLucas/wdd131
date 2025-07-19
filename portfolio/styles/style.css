@@ -123,7 +123,7 @@ main {
 
 .hero-image img {
     width: 100%;
-    height: 300px;
+    height: auto;
     object-fit: cover;
     background-color: var(--buff);
     border-radius: 8px;
@@ -196,6 +196,51 @@ footer {
     font-size: 1.1rem;
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(8%) saturate(1835%) hue-rotate(170deg) brightness(94%) contrast(91%);
+}
+
+/* Dark mode footer adjustments */
+[data-theme="dark"] footer {
+    background-color: var(--dark-secondary);
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .social-icon {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -238,5 +283,19 @@ footer {
     
     .project-button {
         width: 100%;
+    }
+    
+    /* Footer responsive */
+    .footer-content {
+        gap: 15px;
+    }
+    
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
     }
 }
